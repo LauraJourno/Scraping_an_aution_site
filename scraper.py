@@ -7,12 +7,19 @@ import lxml.html
 # # Read in a page
 html = scraperwiki.scrape("https://www.sdlauctions.co.uk/property-list/")
 #print the HTML variable containing the webpage
-print(html)
+#print(html)
 
 # # Find something on the page using css selectors
-# root = lxml.html.fromstring(html)
-# root.cssselect("div[align='left']")
-#
+root = lxml.html.fromstring(html)
+root.cssselect("li p a")
+#Change "div[align='left']" to a different CSS selector to grab something else. 
+#Looking on the site, I'm going to scrape through a series of tags to drill down information. I've asked it to find all a under p under li.
+#In the inspector, this is seen like this: 
+#<li>
+# <p>
+#   <a> This will essentially scrape all data that match this. Then if I wanted to look only at the Birmingham datasets, I would need to filter this further.
+
+
 # # Write out to the sqlite database using scraperwiki library
 # scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
 #
