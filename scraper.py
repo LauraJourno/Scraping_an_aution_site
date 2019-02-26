@@ -36,6 +36,21 @@ for li in matchedlinks:
   #print that
   print(listtext)
   
+ #Now we need to save our scraper by creating a dictionary.
+#create a dictionary called record
+record = {}
+#Loop through the items in matchedlinks, calling each one li
+for li in matchedlinks:
+  #Store the text contents of li in a new variable listtext
+  listtext = li.text_content()
+  #print that
+  print(listtext)
+  #store it in the 'record' dictionary under the key 'address'
+  record['address'] = listtext
+  #save the record to the datastore with 'address' as the unique key
+  scraperwiki.sqlite.save(['address'],record)
+
+#The ['address'] bit in record['address'] = listtext creates a key in that empty dictionary (think of it as a column header). Whatever listtext is, is then stored against that key (think of it as being put in that column).
 #The function .text_content() converts that confusing code <Element a at 0x7fd8d69ed310> into something more readable and useful: the text contents of the tag that was grabbed.
 
 # # Write out to the sqlite database using scraperwiki library
