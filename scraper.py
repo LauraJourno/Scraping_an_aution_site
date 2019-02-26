@@ -24,7 +24,7 @@ root.cssselect("li p a")
 #Then if I wanted to look only at the Birmingham datasets, I would need to filter this further.
 #So this root.cssselect runs fine, but we haven't asked it to store teh data or print it. So now we need to do this.
 #First, let's store those matches.
-matchedlinks=root.css("li p a")
+matchedlinks=root.cssselect("li p a")
 #So now we've stored it, we want to print it.
 print(matchedlinks)
 
