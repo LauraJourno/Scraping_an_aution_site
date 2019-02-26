@@ -26,7 +26,17 @@ root.cssselect("li p a")
 #First, let's store those matches.
 matchedlinks=root.cssselect("li p a")
 #So now we've stored it, we want to print it.
-print(matchedlinks)
+#print(matchedlinks)
+#So now this has run successfully, it doesn't make much sense. Now we are going to convert it to something more readable.
+
+#Loop through the items in matchedlinks, calling each one li
+for li in matchedlinks:
+  #Store the text contents of li in a new variable listtext
+  listtext = li.text_content()
+  #print that
+  print(listtext)
+  
+#The function .text_content() converts that confusing code <Element a at 0x7fd8d69ed310> into something more readable and useful: the text contents of the tag that was grabbed.
 
 # # Write out to the sqlite database using scraperwiki library
 # scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
