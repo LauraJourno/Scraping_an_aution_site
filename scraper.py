@@ -50,6 +50,7 @@ for li in matchedlinks:
   #save the record to the datastore with 'address' as the unique key
   scraperwiki.sqlite.save(['address'],record)
 
+print(li.text_content().encode('utf-8'))
 #The ['address'] bit in record['address'] = listtext creates a key in that empty dictionary (think of it as a column header). Whatever listtext is, is then stored against that key (think of it as being put in that column).
 #The function .text_content() converts that confusing code <Element a at 0x7fd8d69ed310> into something more readable and useful: the text contents of the tag that was grabbed.
 
