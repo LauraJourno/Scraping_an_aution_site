@@ -5,12 +5,12 @@ import scraperwiki
 import lxml.html
 #
 # # Read in a page
-html = scraperwiki.scrape("https://www.sdlauctions.co.uk/property-list/")
+html=scraperwiki.scrape("https://www.sdlauctions.co.uk/property-list/")
 #print the HTML variable containing the webpage
 #print(html)
 
 # # Find something on the page using css selectors
-root = lxml.html.fromstring(html)
+root=lxml.html.fromstring(html)
 root.cssselect("li p a")
 #
 #Change "div[align='left']" to a different CSS selector to grab something else. 
