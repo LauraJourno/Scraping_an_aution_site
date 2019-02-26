@@ -40,7 +40,7 @@ for li in matchedlinks:
 #create a dictionary called record
 record = {}
 #Loop through the items in matchedlinks, calling each one li
-for li in matchedlinks:
+for li in matchedlinks[0:300]:
   #Store the text contents of li in a new variable listtext
   listtext = li.text_content()
   #print that
